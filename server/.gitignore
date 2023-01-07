@@ -1,0 +1,9 @@
+venv
+.idea
+db.sqlite3
+
+# Ignore all in ./logs apart from .gitkeep
+**/logs/*
+*.log
+logs/*
+!logs/.gitkeep
