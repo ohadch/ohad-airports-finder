@@ -1,0 +1,5 @@
+database.sqlite
+./idea/**
+**/venv
+build
+dist
