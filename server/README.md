@@ -8,6 +8,14 @@ make install
 
 ## Run
 
+### Run from source
+
 ```shell
-python app.py
+make up-source
+```
+
+### Run from Docker
+
+```shell
+make up-docker
 ```

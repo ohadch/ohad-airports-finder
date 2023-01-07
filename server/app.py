@@ -33,4 +33,4 @@ def get_airports():
 
 
 if __name__ == "__main__":
-    app.run(port=SERVER_PORT, debug=SERVER_DEBUG)
+    app.run(host="0.0.0.0", port=SERVER_PORT, debug=SERVER_DEBUG)
