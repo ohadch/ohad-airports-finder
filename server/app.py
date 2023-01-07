@@ -1,18 +1,24 @@
-from flask import Flask, request, jsonify, render_template
+# -*- coding: utf-8 -*-
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 
-from server.services.query_manager import QueryManager
+from utils.query_manager import QueryManager
+from settings import SERVER_PORT, SERVER_DEBUG
+from utils.logger import get_logger
 
-app = Flask(__name__,
-            static_folder="static",
-            template_folder="templates")
+app = Flask(__name__, static_folder="static", template_folder="templates")
 
 CORS(app)
 
 
-@app.route("/", methods=["GET"])
-def client():
-    return render_template("index.html")
+# get logger
+logger = get_logger(__name__)
+
+
+@app.errorhandler(Exception)
+def handle_error(e):
+    logger.exception(f"Unhandled exception: {e}")
+    return jsonify(error=str(e)), 500
 
 
 @app.route("/api/airports", methods=["GET"])
@@ -23,7 +29,8 @@ def get_airports():
     qm = QueryManager.from_default_db()
     airports = qm.get_airports_by_us_state_and_runway(us_state, runway)
 
-    return jsonify({"airports": airports.to_dict(orient='records')})
+    return jsonify({"airports": airports.to_dict(orient="records")})
 
 
-app.run(port=8000, debug=True)
+if __name__ == "__main__":
+    app.run(port=SERVER_PORT, debug=SERVER_DEBUG)
