@@ -11,13 +11,16 @@ RUN git config --global url."https://".insteadOf git://
 # Install dependencies
 COPY package.json .
 COPY package-lock.json .
-RUN yarn install
+RUN npm install
 
 # Copy app files
 COPY . .
+
+# Build app
+RUN npm run build
 
 # Expose port
 EXPOSE 3000
 
 # Start the app
-CMD [ "yarn", "serve:build" ]
+CMD [ "npm", "run", "serve:build" ]

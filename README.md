@@ -31,3 +31,15 @@ cd frontend
 npm install
 npm run serve
 ```
+
+## Deploy on local Kubernetes
+
+1. Spin up the local helm repo and docker registry
+
+```shell
+make local-docker-compose-local-repo-and-registry-up
+```
+
+2. Build the docker images and push them to the local registry
+
+```shell

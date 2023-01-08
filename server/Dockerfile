@@ -16,4 +16,4 @@ RUN pip install -r requirements.txt
 EXPOSE 8000
 
 # Entrypoint
-ENTRYPOINT ["python", "app.py"]
+ENTRYPOINT ["waitress-serve", "--port=8000", "--call", "app:create_app"]

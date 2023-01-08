@@ -3,3 +3,5 @@ database.sqlite
 **/venv
 build
 dist
+registry
+charts
