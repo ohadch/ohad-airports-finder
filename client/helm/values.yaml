@@ -1,4 +1,4 @@
 image:
   repository: localhost:5001/ohad-airports-finder-client
   tag: latest
-  pullPolicy: Always
+  pullPolicy: IfNotPresent

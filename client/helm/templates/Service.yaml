@@ -2,15 +2,15 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: ohad-airports-finder-client-service
-  name: ohad-airports-finder-client-service
+    app: ohad-airports-finder-client
+  name: ohad-airports-finder-client
 spec:
   type: LoadBalancer
   ports:
-    - name: "3000"
+    - protocol: TCP
       port: 3000
       targetPort: 3000
   selector:
-    app: ohad-airports-finder-client-service
+    app: ohad-airports-finder-client
 status:
   loadBalancer: {}

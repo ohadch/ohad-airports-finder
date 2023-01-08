@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ohad-airports-finder-client-deployment
+  name: ohad-airports-finder-client
   labels:
       app: ohad-airports-finder-client
 spec:
