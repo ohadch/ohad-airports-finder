@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ohad-airports-finder-client-deployment
+  labels:
+      app: ohad-airports-finder-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ohad-airports-finder-client
+  template:
+    metadata:
+      labels:
+        app: ohad-airports-finder-client
+    spec:
+      containers:
+      - name: ohad-airports-finder-client
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: 3000

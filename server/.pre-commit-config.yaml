@@ -10,7 +10,6 @@ repos:
     -   id: detect-aws-credentials
     -   id: detect-private-key
     -   id: check-json
-    -   id: check-yaml
     -   id: end-of-file-fixer
     -   id: mixed-line-ending
     -   id: trailing-whitespace

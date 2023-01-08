@@ -1,0 +1,12 @@
+apiVersion: v2
+name: ohad-airports-finder
+version: 0.0.1
+description: A Helm chart for Ohad Airports Finder
+
+dependencies:
+  - name: ohad-airports-finder-client
+    version: 0.0.1
+    repository: file://../../client/helm
+  - name: ohad-airports-finder-server
+    version: 0.0.1
+    repository: file://../../server/helm

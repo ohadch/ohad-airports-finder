@@ -1,0 +1,4 @@
+apiVersion: v1
+name: ohad-airports-finder-client
+version: 0.0.1
+description: A Helm chart for Ohad Airports Finder Client

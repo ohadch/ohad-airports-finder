@@ -1,0 +1,9 @@
+dependencies:
+- name: ohad-airports-finder-client
+  repository: file://../../client/helm
+  version: 0.0.1
+- name: ohad-airports-finder-server
+  repository: file://../../server/helm
+  version: 0.0.1
+digest: sha256:52a5a4284011950b27d7001f57cc97d56c33d1f5ec18b14ed5f57adfb6ae4f44
+generated: "2023-01-08T18:50:26.360863+02:00"
