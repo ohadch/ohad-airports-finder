@@ -34,12 +34,16 @@ npm run serve
 
 ## Deploy on local Kubernetes
 
-1. Spin up the local helm repo and docker registry
-
 ```shell
+# Spin up the local helm repo and docker registry
 make local-docker-compose-local-repo-and-registry-up
+
+# Build the local docker images
+docker-compose build
+
+# Push the images to the local registry
+docker-compose push
+
+# Install the local helm repo
+make up-k8s
 ```
-
-2. Build the docker images and push them to the local registry
-
-```shell
